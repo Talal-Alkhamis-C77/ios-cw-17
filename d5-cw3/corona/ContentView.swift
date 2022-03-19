@@ -10,7 +10,16 @@ import SwiftUI
 
 // يجب عمل هيكل وكائنات من الهيكل
 
+let pepole = [userCovidInfo(fullname: "Adnan", area: "Kuwait", numberOfDoses: 5),
+              
+              userCovidInfo(fullname: "Retaj Alotabi", area: "London", numberOfDoses: 15),
 
+              userCovidInfo(fullname: "Jacob Algadban", area: "Somewhere", numberOfDoses: 2),
+              
+              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3)
+              
+
+]
 struct ContentView: View {
     var body: some View {
         ZStack{
@@ -24,38 +33,20 @@ struct ContentView: View {
                 Text("حالات كورونا الجديدة")
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
-                // name of new cases
-                VStack{
-        // الحالة الأولى
-                // الاسم
-               Text("")
-// المنطقة
-                Text("")
-                    // عدد الجرعات
-               Text("")
+                ForEach(pepole, id: \.id) { i in
+                    VStack{
+            // الحالة الأولى
+                    // الاسم
+                        Text("الاسم: \(i.fullname)")
+    // المنطقة
+                        Text("المنطقة: \(i.area)")
+                        // عدد الجرعات
+                        Text("\(i.numberOfDoses)")
 
-                Divider()
+                    Divider()
+                    }
                 }
-                VStack{
-        // الحالة الثانية
-                // الاسم
-               Text("")
-                // المنطقة
-               Text("")
-    // عدد الجرعات
-               Text("")
-
-                Divider()
-                }
-                VStack{
-              // الحالة الثالثة
-                      // الاسم
-                     Text("")
-                      // المنطقة
-                     Text("")
-          // عدد الجرعات
-                     Text("")
-                }
+     
                 Spacer()
                 HStack{
                     Text("آخر تحديث ١٥-٣-٢٠٢٢")
