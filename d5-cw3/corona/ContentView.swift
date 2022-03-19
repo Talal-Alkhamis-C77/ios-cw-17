@@ -16,7 +16,15 @@ let pepole = [userCovidInfo(fullname: "Adnan", area: "Kuwait", numberOfDoses: 5)
 
               userCovidInfo(fullname: "Jacob Algadban", area: "Somewhere", numberOfDoses: 2),
               
-              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3)
+              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3),
+              
+              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3),
+              
+              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3),
+              
+              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3),
+              
+              userCovidInfo(fullname: "Talal", area: "Kafian", numberOfDoses: 3),
               
 
 ]
@@ -33,7 +41,7 @@ struct ContentView: View {
                 Text("حالات كورونا الجديدة")
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
-                ForEach(pepole, id: \.id) { i in
+                List(pepole, id: \.id) { i in
                     VStack{
             // الحالة الأولى
                     // الاسم
